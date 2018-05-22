@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-
+before_action :set_bike, only: [:edit, :update, :show]
   def index
     if params[:location]
       @bikes = Bike.where("address iLIKE ?", "%#{params[:location]}%")
@@ -25,12 +25,24 @@ class BikesController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def update
+    bike_params
+    @bike.update(bike_params)
+    redirect_to bike_path(@bike)
+
   end
 
   private
 
   def bike_params
     params.require(:bike).permit(:name, :description, :size, :type, :price, :address)
+  end
+
+  def set_bike
+    @bike = Bike.find(params[:id])
   end
 
 end

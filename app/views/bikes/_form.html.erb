@@ -1,4 +1,4 @@
-<%= simple_form_for(@bike) do |f| %>
+<%= simple_form_for(bike) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -11,7 +11,7 @@
       <%= f.input :address %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-danger" %>
-    </div>
+    <div class="form-actions form-button">
+      <%= f.button :submit, class: "btn btn-primary" %>
+
 <% end %>
