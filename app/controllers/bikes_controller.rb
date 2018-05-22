@@ -9,6 +9,7 @@ before_action :set_bike, only: [:edit, :update, :show]
   end
 
   def show
+    @bike = Bike.find(params[:id])
   end
 
   def new
@@ -17,8 +18,9 @@ before_action :set_bike, only: [:edit, :update, :show]
 
   def create
     @bike = Bike.new(bike_params)
-    if @bike.save!
-      redirect_to bikes_path
+    @bike.user = current_user
+    if @bike.save
+      redirect_to bike_path(@bike)
     else
       render :new
     end
@@ -35,10 +37,16 @@ before_action :set_bike, only: [:edit, :update, :show]
 
   end
 
+  def destroy
+    # @bike = Bike.find(params[:id])
+    # @bike.destroy
+    # redirect_to dashboard_path
+  end
+
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :description, :size, :type, :price, :address)
+    params.require(:bike).permit(:name, :description, :size, :category, :price, :address)
   end
 
   def set_bike
