@@ -1,0 +1,29 @@
+<div class="dashboard">
+  <h2>Dashboard</h2>
+
+  <div class="user-profile">
+    <h3><%= current_user.first_name %></h3>
+    <h3><%= current_user.last_name %></h3>
+    <p><%= current_user.email %></p>
+    <%= link_to "Edit your profile", edit_user_registration_path %>
+  </div>
+
+    <p>Messages</p>
+
+    <p>Your Bookings</p>
+
+    <p>Your Bikes</p>
+    <ul>
+      <% current_user.bikes.each do |bike| %>
+        <li>
+          <strong><%= bike.name %></strong>
+          <%= bike.description %>
+          <%= link_to '<i class="far fa-times-circle"></i>'.html_safe, bike_path(bike) , method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+
+
+  </div>
+
+</div>
