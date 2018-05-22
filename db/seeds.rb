@@ -6,14 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  arthur = User.create!(email: "arthur@lewagon.com", password: "123456", first_name: "Arthur", last_name: "Littman")
+require 'faker'
+
+
+10.times do
+  user = User.create!(email: Faker::Internet.free_email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   Bike.create!(
     name: 'Kids Mountain Bike in Good Condition',
     description: 'Hi I have kids mountain bike in good working order 20 inch wheels Good tyres, gears and brakes Recently checked and serviced As you can see from the pictures the bike is in good condition',
     size: 'kids - 10 years old',
     price: 40,
     address: '138 Kingsland Rd, London',
-    user: arthur
+    user: user
   )
-
-
+end
