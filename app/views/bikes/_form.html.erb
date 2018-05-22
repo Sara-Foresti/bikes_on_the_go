@@ -1,17 +1,17 @@
-<%= simple_form_for(@bike) do |f| %>
+<%= simple_form_for(bike) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="forminputs">
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :type, :collection => %w[mountain-bike city-bike tandem]%>
+      <%= f.input :category, :collection => %w[mountain-bike city-bike tandem]%>
       <%= f.input :size, :collection => %w[adult child]%>
       <%= f.input :price %>
       <%= f.input :address %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-danger" %>
-    </div>
+    <div class="form-actions form-button">
+      <%= f.button :submit, class: "btn btn-primary" %>
+
 <% end %>
