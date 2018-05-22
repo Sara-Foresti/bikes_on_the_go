@@ -1,27 +1,26 @@
-<h1>Post your bike</h1>
-<p>Rent your bike in one click.</p>
+<div class="wrapper">
+  <div class="content">
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <%= simple_form_for(@bike) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="description">
+      <h1>Post your bike</h1>
+      <p>Rent your bike in one click.</p>
+    </div>
 
-      <div class="forminputs">
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :type, :collection => %w[mountain-bike city-bike tandem]%>
-        <%= f.input :size, :collection => %w[adult child]%>
-        <%= f.input :price %>
-        <%= f.input :address %>
+    <div class="form">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <%= render 'form', bike: @bike%>
+          <div>
+            <%= link_to 'Back', bikes_path %>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-   </div>
- </div>
+  </div>
 </div>
+
+
+
+
 
