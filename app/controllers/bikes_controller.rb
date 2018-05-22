@@ -1,7 +1,11 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    if params[:location]
+      @bikes = Bike.where("address iLIKE ?", "%#{params[:location]}%")
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
