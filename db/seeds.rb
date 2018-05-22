@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-  user = User.create!(email: "arthur@lewagon.com", password: "123456")
+
+  arthur = User.create!(email: "arthur@lewagon.com", password: "123456", first_name: "Arthur", last_name: "Littman")
 
   Bike.create!(
     name: 'Kids Mountain Bike in Good Condition',
@@ -13,7 +14,7 @@
     size: 'kids - 10 years old',
     price: 40,
     address: '138 Kingsland Rd, London',
-    user: user
+    user: arthur
   )
 
 Bike.create!(
@@ -31,7 +32,7 @@ Bike.create!(
     size: 'Womens',
     price: 40,
     address: '138 Kingsland Rd, London',
-    user: user
+    user: arthur
   )
 
 Bike.create!(
@@ -40,7 +41,7 @@ Bike.create!(
     size: 'Womens',
     price: 40,
     address: '138 Kingsland Rd, London',
-    user: user
+    user: arthur
   )
 
 Bike.create!(
@@ -49,5 +50,5 @@ Bike.create!(
     size: 'Womens',
     price: 40,
     address: '138 Kingsland Rd, London',
-    user: user
+    user: arthur
   )
