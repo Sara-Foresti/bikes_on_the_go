@@ -1,0 +1,27 @@
+<div class="dashboard">
+  <h2>Dashboard</h2>
+
+  <div class="user-profile">
+    <h3><%= current_user.first_name %></h3>
+    <h3><%= current_user.last_name %></h3>
+    <p><%= current_user.email %></p>
+    <%= link_to "Edit your profile", edit_user_registration_path %>
+  </div>
+
+  <div class="tabs">
+    <%= link_to,  , class: "tab" do %>
+      <p>Messages</p>
+    <% end %>
+
+    <%= link_to,  class: "tab" do %>
+     <p>Your Bookings</p>
+    <% end %>
+
+    <%= link_to,  class: "tab active" do %>
+     <p>Your Bikes</p>
+    <% end %>
+
+
+  </div>
+
+</div>
