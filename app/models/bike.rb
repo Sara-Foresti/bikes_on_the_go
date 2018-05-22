@@ -3,7 +3,7 @@ class Bike < ApplicationRecord
   has_many :bookings
   has_many :bookers, through: :bookings, source: :user
 
-  # validates :type, presence: true
+  # validates :category, presence: true
   # validates :size, presence: true
   # validates :address, presence: true
   # validates :price, presence: true, numericality: true
