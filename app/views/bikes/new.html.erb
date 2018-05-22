@@ -1,2 +1,27 @@
-<h1>Bikes#new</h1>
-<p>Find me in app/views/bikes/new.html.erb</p>
+<h1>Post your bike</h1>
+<p>Rent your bike in one click.</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= simple_form_for(@bike) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="forminputs">
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :type, :collection => %w[mountain-bike city-bike tandem]%>
+        <%= f.input :size, :collection => %w[adult child]%>
+        <%= f.input :price %>
+        <%= f.input :address %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+   </div>
+ </div>
+</div>
+
