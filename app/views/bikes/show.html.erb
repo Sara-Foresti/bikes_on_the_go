@@ -1,10 +1,22 @@
-<div class="container">
-  <div class="card_bike" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-  url('https://cdn.gearpatrol.com/wp-content/uploads/2015/04/best-mountain-biking-trails-new-zealand-gear-patrol-lead-full-.jpg');">
+<div class="banner-show content-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.gearpatrol.com/wp-content/uploads/2015/04/best-mountain-biking-trails-new-zealand-gear-patrol-lead-full-.jpg');">
 
+  <div class="container ">
+    <div class="banner-user">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "avatar" %>
+      <h3><%= @bike.user.first_name %></h3>
+    </div>
   </div>
-  <div class="block">
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+</div>
+
+<div class="container">
+  <div class="flex-container">
+    <div class="left">
+      <h1><%= @bike.name %></h1>
+      <p><%= @bike.description %></p>
+    </div>
+    <div class="booking">
+
+    </div>
   </div>
 
 </div>
@@ -28,7 +40,3 @@
 
 
 
-<!--   <h1><%= @bike.name %></h1>
-  <h3><%= @bike.description %></h3>
-
- -->

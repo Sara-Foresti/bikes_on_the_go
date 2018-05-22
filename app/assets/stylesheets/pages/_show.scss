@@ -1,24 +1,94 @@
-.container {
-  background-color: green;
-}
-
-.block {
-  height: 203px;
-  width: 165px;
-  background-color: #555;
-}
-
-.card-user {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.card_bike {
-  height: 404px;
-  width: 824px;
+.banner-show {
+  height: 350px;
+  margin-bottom: 50px;
   background-size: cover;
+  background-position: center;
+  .avatar {
+    width: 150px;
+    border-radius: 50%;
+  }
+  .banner-user {
+    background-color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    top: 50px;
+  }
+}
+
+.content-bottom {
+  display: flex;
+  align-items: flex-end;
 }
 
 
+.flex-container {
+  display: flex;
 
+}
+
+.left {
+  flex: 1 1 auto;
+}
+
+.booking {
+  flex: 0 0 300px;
+  background: white;
+  height: 100px;
+}
+
+// .container_show {
+//   background-color: white;
+//   margin-right: 200px;
+//   margin-left: 200px;
+// }
+
+// .block {
+//   height: 203px;
+//   width: 165px;
+//   background-color: #555;
+//   position: absolute;
+//   bottom: 15px;
+//   left: 17px;
+//   box-shadow: 1px 1px grey;
+//   background-color: white;
+// }
+
+// .card-user {
+//     width: 69px;
+//     height: 113px;
+//     width: 100px;
+//     border-radius: 50%;
+//     right: 14px;
+//     top: 10px;
+//     width: 113px;
+// }
+
+// .card_bike {
+//   height: 404px;
+//   width: 824px;
+//   background-size: cover;
+//   position: relative;
+
+// }
+
+// .card-avatar {
+//   padding-top: 15px;
+// }
+
+
+// .info {
+//   text-align: left;
+// }
+
+// h1 {
+//   text-align: left;
+//   font-size: 27px;
+//   font-weight: bold;
+//   padding-top: 10px;
+// }
+
+// h3 {
+//     font-size: 20px;
+// }
