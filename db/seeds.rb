@@ -6,22 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# arthur = User.find_by(email: "arthur@lewagon.com")
-# if condition
-
-# end
-# arthur.bikes.destroy_all
-# arthur.destroy
-
-
-arthur = User.create!(email: "arthur@lewagon.com", password: "123456", first_name: "Arthur", last_name: "Littmann")
-Bike.create!(
-  name: 'Kids Mountain Bike in Good Condition',
-  description: 'Hi I have kids mountain bike in good working order 20 inch wheels Good tyres, gears and brakes Recently checked and serviced As you can see from the pictures the bike is in good condition',
-  size: 'kids - 10 years old',
-  price: 40,
-  address: '138 Kingsland Rd, London',
-  user: arthur
-)
+  arthur = User.create!(email: "arthur@lewagon.com", password: "123456", first_name: "Arthur", last_name: "Littman")
+  Bike.create!(
+    name: 'Kids Mountain Bike in Good Condition',
+    description: 'Hi I have kids mountain bike in good working order 20 inch wheels Good tyres, gears and brakes Recently checked and serviced As you can see from the pictures the bike is in good condition',
+    size: 'kids - 10 years old',
+    price: 40,
+    address: '138 Kingsland Rd, London',
+    user: arthur
+  )
 
 
