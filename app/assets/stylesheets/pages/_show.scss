@@ -41,17 +41,19 @@
   box-shadow: 1px 1px 1px #e6e6e6;
   opacity: 0.9;
   font-weight: bold;
+  position: relative;
 }
 
-.btn_request {
+.btn-request {
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
   background: #ee8f5b;
   transition: background 0.3s ease;
-  bottom: 20px;
-  margin: 43px;
+  position: absolute;
+  bottom:20px;
+  left:78px;
   box-shadow: 1px 1px 1px #ddd;
 }
 
@@ -100,4 +102,8 @@ h2 {
 .bike-image2{
   width: 31.5%;
   height: 30%;
+}
+
+.image-padding{
+  margin-bottom: 30px;
 }
