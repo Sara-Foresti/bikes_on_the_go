@@ -2,6 +2,7 @@ class Bike < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :bookers, through: :bookings, source: :user
+  mount_uploader :photo, PhotoUploader
 
   # validates :category, presence: true
   # validates :size, presence: true
