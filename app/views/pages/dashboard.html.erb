@@ -38,7 +38,7 @@
         <div role="tabpanel" class="tab-pane active" id="bikes">
           <% current_user.bikes.each do |bike| %>
           <li class="bike">
-            <%= image_tag "bike1.jpg", class: "tab-image" %>
+            <%= cl_image_tag bike.photo, class: 'tab-image' %>
             <div class="bike-details">
               <strong><%= bike.name %></strong>
               <p> <%= bike.description %></p>
