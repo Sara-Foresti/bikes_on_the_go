@@ -1,29 +1,103 @@
 <div class="dashboard">
-  <h2>Dashboard</h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <div class="user-profile text-center">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "avatar" %>
+        <h3><%= current_user.first_name %></h3>
+        <h3><%= current_user.last_name %></h3>
+        <p><%= current_user.email %></p>
+        <%= link_to "Edit your profile", edit_user_registration_path %>
+      </div>
+    </div>
 
-  <div class="user-profile">
-    <h3><%= current_user.first_name %></h3>
-    <h3><%= current_user.last_name %></h3>
-    <p><%= current_user.email %></p>
-    <%= link_to "Edit your profile", edit_user_registration_path %>
+
+
+    <div class="dash_nav col-xs-12 col-md-9">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" class="tab"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation" class="tab active"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Your Bookings</a></li>
+        <li role="presentation" class="tab"><a href="#bikes" aria-controls="bikes" role="tab" data-toggle="tab">Your Bikes</a></li>
+      </ul>
+
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="bookings">
+          <li class="bike">
+
+
+          </li>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+          <li class="bike">
+
+
+          </li>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="bikes">
+          <% current_user.bikes.each do |bike| %>
+          <li class="bike">
+            <%= image_tag "bike1.jpg", class: "tab-image" %>
+            <div class="bike-details">
+              <strong><%= bike.name %></strong>
+              <p> <%= bike.description %></p>
+            </div>
+            <%= link_to '<i class="far fa-times-circle"></i>'.html_safe, bike_path(bike) , method: :delete, data: { confirm: "Are you sure you want to delete this bike?"} %>
+          </li>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+<!--
+    <div class="col-xs-12 col-md-9">
+      <div class="tabs">
+
+
+        <div class="tab">
+          <p>Messages</p>
+        </div>
+
+
+
+        <div class="tab">
+          <p>Your Bookings</p>
+        </div>
+
+
+
+        <div class="tab active">
+          <p>Your Bikes</p>
+        </div>
+
+
+      </div>
+
+      <ul class="bikes-tab" id="your-bikes">
+
+      </ul> -->
+
+       <!--  <ul class="bikes-tab" id="bookings">
+          <% #current_user.bookings.each do |booking| %>
+            <li class="bike">
+              <%#= image_tag "bike1.jpg", class: "tab-image" %>
+              <div class="bike-details">
+                <strong><%#= bike.name %></strong>
+                <p> <%#= bike.description %></p>
+              </div>
+              <%#= link_to '<i class="far fa-times-circle"></i>'.html_safe, bike_path(bike) , method: :delete, data: { confirm: "Are you sure you want to delete this bike?"} %>
+            </li>
+          <%# end %>
+        </ul> -->
+
+      </div>
+    </div>
   </div>
-
-    <p>Messages</p>
-
-    <p>Your Bookings</p>
-
-    <p>Your Bikes</p>
-    <ul>
-      <% current_user.bikes.each do |bike| %>
-        <li>
-          <strong><%= bike.name %></strong>
-          <%= bike.description %>
-          <%= link_to '<i class="far fa-times-circle"></i>'.html_safe, bike_path(bike) , method: :delete %>
-        </li>
-      <% end %>
-    </ul>
-
-
-  </div>
-
-</div>
