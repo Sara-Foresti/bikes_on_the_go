@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_121548) do
     t.bigint "bike_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["bike_id"], name: "index_bookings_on_bike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
