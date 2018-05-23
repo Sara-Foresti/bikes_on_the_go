@@ -21,6 +21,10 @@
 
 </div>
 
+<%= simple_form_for @booking, :url => bike_bookings_path(@bike), :method => :post do |f|%>
+<%= f.submit "Request to book", class: "btn btn-primary" %>
+<% end %>
+
 
 
 

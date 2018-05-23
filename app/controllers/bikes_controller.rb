@@ -10,6 +10,7 @@ before_action :set_bike, only: [:edit, :update, :show]
 
   def show
     @bike = Bike.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
