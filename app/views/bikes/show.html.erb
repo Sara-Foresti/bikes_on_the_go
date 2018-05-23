@@ -13,6 +13,8 @@
     <div class="left">
       <h1><%= @bike.name %></h1>
       <p><%= @bike.description %></p>
+      <%= cl_image_tag(@bike.photo,
+      width: 400, height: 300, crop: :fill)%>
     </div>
     <div class="booking">
 

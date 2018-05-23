@@ -46,7 +46,7 @@ before_action :set_bike, only: [:edit, :update, :show]
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :description, :size, :category, :price, :address)
+    params.require(:bike).permit(:name, :description, :size, :category, :price, :address, :photo)
   end
 
   def set_bike
