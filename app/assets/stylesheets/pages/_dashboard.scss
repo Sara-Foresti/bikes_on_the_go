@@ -1,0 +1,97 @@
+.user-profile {
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.07);
+  padding: 25px;
+  .avatar {
+    border-radius: 50%;
+    width: 100px;
+  };
+  h3 {
+    margin: 5px 0px 5px 0px;
+  };
+  p {
+    font-size: 16px;
+  };
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.dashboard {
+  padding: 50px 40px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab {
+  flex: 0 0 33%;
+  text-align: center;
+  padding: 20px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.nav-tabs {
+  border-bottom: none !important;
+  & li.active {
+    & a {
+      background-color: #fff !important;
+      border: none !important;
+    }
+
+  }
+  & li {
+    & a {
+      color: #333333;
+    }
+  }
+}
+
+.nav-tabs-justified li a {
+  border-bottom: none !important;
+}
+
+.tab-pane {
+  & li {
+    min-height: 206px;
+  }
+}
+
+.tab.active {
+  background: white;
+  border-bottom: 3px solid #00B4CC;
+}
+
+.bikes-tab {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+
+}
+
+.tab-image{
+  width: 150px;
+  height: 100px;
+}
+
+.bike {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  border-bottom: 2px solid #ededed;
+  background: white;
+}
+
+.bike-details {
+  flex: 0 1 auto;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+

@@ -39,9 +39,9 @@ before_action :set_bike, only: [:edit, :update, :show]
   end
 
   def destroy
-    # @bike = Bike.find(params[:id])
-    # @bike.destroy
-    # redirect_to dashboard_path
+    @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to dashboard_path
   end
 
   private
