@@ -17,13 +17,13 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-justified" role="tablist">
         <li role="presentation" class="tab"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-        <li role="presentation" class="tab active"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Your Bookings</a></li>
-        <li role="presentation" class="tab"><a href="#bikes" aria-controls="bikes" role="tab" data-toggle="tab">Your Bikes</a></li>
+        <li role="presentation" class="tab"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Your Bookings</a></li>
+        <li role="presentation" class="tab active"><a href="#bikes" aria-controls="bikes" role="tab" data-toggle="tab">Your Bikes</a></li>
       </ul>
 
 
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="bookings">
+        <div role="tabpanel" class="tab-pane" id="bookings">
           <li class="bike">
 
 
@@ -35,7 +35,7 @@
 
           </li>
         </div>
-        <div role="tabpanel" class="tab-pane" id="bikes">
+        <div role="tabpanel" class="tab-pane active" id="bikes">
           <% current_user.bikes.each do |bike| %>
           <li class="bike">
             <%= image_tag "bike1.jpg", class: "tab-image" %>

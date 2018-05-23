@@ -30,7 +30,7 @@
       <hr class="line">
       <div class="center">
         <!-- <a href="#" class="btn_request">Request booking</a> -->
-        <%= simple_form_for @booking, :url => bike_bookings_path(@bike), :method => :post do |f|%>
+        <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
           <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
         <% end %>
       </div>

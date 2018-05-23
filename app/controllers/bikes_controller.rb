@@ -1,5 +1,7 @@
 class BikesController < ApplicationController
-before_action :set_bike, only: [:edit, :update, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_bike, only: [:edit, :update, :show]
+
   def index
     if params[:location]
       @bikes = Bike.where("address iLIKE ?", "%#{params[:location]}%")
