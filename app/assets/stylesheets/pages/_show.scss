@@ -35,60 +35,69 @@
 .booking {
   flex: 0 0 300px;
   background: white;
-  height: 100px;
+  height: 532px;
+  margin-top: -267px;
+  margin-right: -18px;
+  box-shadow: 1px 1px 1px #e6e6e6;
+  opacity: 0.9;
+  font-weight: bold;
 }
 
-// .container_show {
-//   background-color: white;
-//   margin-right: 200px;
-//   margin-left: 200px;
-// }
+.btn_request {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ee8f5b;
+  transition: background 0.3s ease;
+  bottom: 20px;
+  margin: 43px;
+  box-shadow: 1px 1px 1px #ddd;
+}
 
-// .block {
-//   height: 203px;
-//   width: 165px;
-//   background-color: #555;
-//   position: absolute;
-//   bottom: 15px;
-//   left: 17px;
-//   box-shadow: 1px 1px grey;
-//   background-color: white;
-// }
+.center {
+  margin-top: 100px;
+}
 
-// .card-user {
-//     width: 69px;
-//     height: 113px;
-//     width: 100px;
-//     border-radius: 50%;
-//     right: 14px;
-//     top: 10px;
-//     width: 113px;
-// }
+h1 {
+  font-size: 23px;
+  padding-left: 10px;
+}
 
-// .card_bike {
-//   height: 404px;
-//   width: 824px;
-//   background-size: cover;
-//   position: relative;
+p {
+    font-size: 17px;
+    padding-top: 20px;
+    padding-left: 11px;
+}
 
-// }
+h2 {
+    font-size: 58px;
+    padding-left: 9px;
+    font-weight: bolder;
+}
 
-// .card-avatar {
-//   padding-top: 15px;
-// }
+.line {
+  margin-top: 27px;
+  margin-bottom: 25px;
+  border-top: 1px solid #eeeeee;
+}
+
+.icon-space {
+  margin: 0% 4%;
+}
+
+.three-pictures {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bike-image{
+  width: 30%;
+  height: 30%;
+}
 
 
-// .info {
-//   text-align: left;
-// }
-
-// h1 {
-//   text-align: left;
-//   font-size: 27px;
-//   font-weight: bold;
-//   padding-top: 10px;
-// }
-
-// h3 {
-//     font-size: 20px;
-// }
+.bike-image2{
+  width: 31.5%;
+  height: 30%;
+}
