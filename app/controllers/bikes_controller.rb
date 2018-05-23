@@ -11,6 +11,7 @@ before_action :set_bike, only: [:edit, :update, :show]
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
+
   end
 
   def new
@@ -20,6 +21,7 @@ before_action :set_bike, only: [:edit, :update, :show]
   def create
     @bike = Bike.new(bike_params)
     @bike.user = current_user
+
     if @bike.save
       redirect_to bike_path(@bike)
     else
