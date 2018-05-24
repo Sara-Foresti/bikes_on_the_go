@@ -4,15 +4,25 @@ class BikesController < ApplicationController
 
   def index
     if params[:location]
-      @bikes = Bike.where("address iLIKE ?", "%#{params[:location]}%")
+      @bikes = Bike.where("address iLIKE ?", "%#{params[:location]}%").where.not(latitude: nil, longitude: nil)
     else
-      @bikes = Bike.all
+      @bikes = Bike.where.not(latitude: nil, longitude: nil)
+    end
+    # @bikes = Bike.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
     end
   end
 
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
+    @markers = [{ lat: @bike.latitude, lng: @bike.longitude }]
 
   end
 
