@@ -8,10 +8,11 @@
 
 require 'faker'
 
+Bike.destroy_all
 
 10.times do
   user = User.create!(email: Faker::Internet.free_email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  Bike.create!(
+  b = Bike.new(
     name: 'Kids Mountain Bike in Good Condition',
     description: 'Hi I have kids mountain bike in good working order 20 inch wheels Good tyres, gears and brakes Recently checked and serviced As you can see from the pictures the bike is in good condition',
     size: 'kids - 10 years old',
@@ -19,4 +20,5 @@ require 'faker'
     address: '138 Kingsland Rd, London',
     user: user
   )
+  b.save
 end
