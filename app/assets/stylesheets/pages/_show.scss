@@ -1,3 +1,7 @@
+body {
+  margin-bottom: 100px;
+}
+
 .banner-show {
   height: 350px;
   margin-bottom: 50px;
@@ -53,7 +57,7 @@
   transition: background 0.3s ease;
   position: absolute;
   bottom:20px;
-  left:78px;
+  left:63px;
   box-shadow: 1px 1px 1px #ddd;
 
 }
@@ -121,5 +125,12 @@ h2 {
   box-shadow: 1px 1px 1px #ddd;
   text-align: center;
   text-decoration: none;
+}
+
+.btn-signup:hover {
+  background: #f27c3c;
+  text-decoration: none;
+  color: white;
+
 }
 
