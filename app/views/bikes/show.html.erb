@@ -1,9 +1,14 @@
-<div class="banner-show content-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.gearpatrol.com/wp-content/uploads/2015/04/best-mountain-biking-trails-new-zealand-gear-patrol-lead-full-.jpg');">
 
+<% bike_photo =  @bike.photo? ? @bike.photo : "https://images.unsplash.com/photo-1496150590317-f8d952453f93?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=961edb326df737a36e5eafcae013b5fe&auto=format&fit=crop&w=1350&q=80" %>
+<div class="banner-show content-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike_photo, quality: "auto" %>');">
+
+  <!-- bike belongs_to :user, the owner of the bike -->
   <div class="container ">
     <div class="banner-user">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "avatar" %>
+      <% if @bike.user.photo? %>
+      <%= cl_image_tag @user.photo, class: "avatar" %>
       <h3><%= @bike.user.first_name %></h3>
+      <% end %>
     </div>
   </div>
 </div>
@@ -13,24 +18,27 @@
     <div class="left">
       <h1><%= @bike.name %></h1>
       <p><%= @bike.description %></p>
-
+      <p>Category: <%= @bike.category %></p>
+      <p>Size: <%= @bike.size %></p>
+      <p>Location: <%= @bike.address %></p>
     </div>
+
     <div class="booking">
 
       <div class="informaton">
-        <p style="margin-left: 4%;">City kids bike - Boys</p>
-        <h2 style="margin-left: 4%;">£10 /day</h2>
+        <!-- <p style="margin-left: 4%;">City kids bike - Boys</p> -->
+        <h2 style="margin-left: 4%;">£ <%= @bike.price %> /day</h2>
 
-        <hr class="line">
+        <!-- <hr class="line"> -->
 
-        <p><i class="fas fa-check icon-space"></i>Location: Shoreditch</p>
-        <p><i class="fas fa-check icon-space"></i>Available: 24May till 30May</p>
-        <p><i class="fas fa-check icon-space"></i>Body height:  110 - 140cm</p>
-      </div>
+
+        <!-- <p><i class="fas fa-check icon-space"></i>Available: 24May till 30May</p>
+         -->
       <hr class="line">
       <div class="center">
+        <!-- date form -->
         <!-- <a href="#" class="btn_request">Request booking</a> -->
-        <% if user_signed_in? %>
+
 
         <% if current_user == @bike.user %>
           <p>It's your bike</p>
@@ -38,21 +46,33 @@
           <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
             <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
           <% end %>
-
         <% end %>
 
-        <% else %>
-          <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
+
+        <div class="booking-form">
+          <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
+            <div class="dates">
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+
+            </div>
+            <% if user_signed_in? %>
+               <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
+            <% else %>
+               <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
+            <% end %>
           <% end %>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-
 <div class="three-pictures">
   <% if @bike.photo? %>
        <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-<% end %>
+  <% end %>
+</div>
 
 </div>
 
