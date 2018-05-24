@@ -11,7 +11,7 @@
     <%= form_tag bikes_path, :method => 'get' do %>
       <p>
         <%= text_field_tag :location, params[:location], class: "nav-inpu" %>
-        <%= submit_tag "Search", :name => nil, class: "btn btn-navbar" %>
+        <%= submit_tag "Search", :name => nil, class: "btn-all" %>
       </p>
     <% end %>
   </div>

@@ -36,13 +36,18 @@
       <div class="center">
         <!-- date form -->
         <!-- <a href="#" class="btn_request">Request booking</a> -->
+
         <div class="booking-form">
           <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
             <div class="dates">
               <%= f.input :start_date %>
               <%= f.input :end_date %>
             </div>
-            <%= f.submit "Request booking", class: "btn-request", id:"sweet-alert-demo" %>
+            <% if user_signed_in? %>
+               <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
+            <% else %>
+               <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
+            <% end %>
           <% end %>
         </div>
 
@@ -50,37 +55,11 @@
     </div>
   </div>
 </div>
-
 <div class="three-pictures">
   <% if @bike.photo? %>
        <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
-   <% if @bike.photo? %>
-       <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
-   <% if @bike.photo? %>
-       <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
+  <% end %>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
