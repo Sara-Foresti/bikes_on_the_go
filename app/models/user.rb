@@ -10,4 +10,8 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 #   validates :first_name, presence: true, allow_blank: false
 #   validates :last_name, presence: true, allow_blank: false
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

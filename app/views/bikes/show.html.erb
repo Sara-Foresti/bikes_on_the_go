@@ -50,17 +50,16 @@
 
 
         <div class="booking-form">
-          <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
-            <div class="dates">
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
-
-            </div>
             <% if user_signed_in? %>
-               <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
+              <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
+                <div class="dates">
+                  <%= f.input :start_date %>
+                  <%= f.input :end_date %>
+                </div>
+                <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
+              <% end %>
             <% else %>
-               <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
-            <% end %>
+              <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
           <% end %>
         </div>
 

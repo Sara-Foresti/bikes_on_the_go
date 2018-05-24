@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :bikes do
     resources :bookings
   end
-  get '/dashboard', to: 'pages#dashboard'
+  get '/dashboard', to: 'pages#dashboard', :defaults => { bike: true }
+  get '/bookings/:id/accept', to: 'bookings#accept', as: :accept
+  get '/bookings/:id/decline', to: 'bookings#decline', as: :decline
 end
