@@ -5,8 +5,10 @@
   <!-- bike belongs_to :user, the owner of the bike -->
   <div class="container ">
     <div class="banner-user">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "avatar" %>
+      <% if @bike.user.photo? %>
+      <%= cl_image_tag @user.photo, class: "avatar" %>
       <h3><%= @bike.user.first_name %></h3>
+      <% end %>
     </div>
   </div>
 </div>
@@ -37,11 +39,22 @@
         <!-- date form -->
         <!-- <a href="#" class="btn_request">Request booking</a> -->
 
+
+        <% if current_user == @bike.user %>
+          <p>It's your bike</p>
+        <% else %>
+          <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
+            <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
+          <% end %>
+        <% end %>
+
+
         <div class="booking-form">
           <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
             <div class="dates">
               <%= f.input :start_date %>
               <%= f.input :end_date %>
+
             </div>
             <% if user_signed_in? %>
                <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
