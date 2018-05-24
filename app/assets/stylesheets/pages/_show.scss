@@ -48,6 +48,17 @@ body {
   position: relative;
 }
 
+.booking-form{
+  padding-left: 23px;
+}
+
+.dates {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ position: absolute;
+}
+
 .btn-request {
   color: white;
   padding: 10px 15px;
@@ -133,7 +144,6 @@ h2 {
   box-shadow: 1px 1px 1px #ddd;
   color: white;
   font-size: 15px;
-
 }
 
 .btn-signup:hover {
@@ -141,4 +151,3 @@ h2 {
   text-decoration: none;
   color: white;
 }
-
