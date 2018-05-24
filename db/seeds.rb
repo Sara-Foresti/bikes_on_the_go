@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-
+Booking.destroy_all
 Bike.destroy_all
 
 10.times do
