@@ -42,11 +42,11 @@
     </div>
   </div>
 </div>
-
 <div class="three-pictures">
   <% if @bike.photo? %>
        <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-<% end %>
+  <% end %>
+</div>
 
 </div>
 
