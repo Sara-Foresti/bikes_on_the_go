@@ -58,6 +58,8 @@ class BikesController < ApplicationController
     redirect_to dashboard_path
   end
 
+
+
   private
 
   def bike_params

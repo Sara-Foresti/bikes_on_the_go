@@ -1,3 +1,7 @@
+body {
+  margin-bottom: 100px;
+}
+
 .banner-show {
   height: 350px;
   margin-bottom: 50px;
@@ -44,17 +48,37 @@
   position: relative;
 }
 
+.booking-form{
+  padding-left: 23px;
+}
+
+.dates {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ position: absolute;
+}
+
 .btn-request {
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #ee8f5b;
+  background: #00B4CC;
   transition: background 0.3s ease;
   position: absolute;
   bottom:20px;
-  left:78px;
+  left:70px;
   box-shadow: 1px 1px 1px #ddd;
+  color: white;
+
+}
+
+.btn-request:hover {
+  background: #009fb5;
+  text-decoration: none;
+  color: white;
+
 }
 
 .center {
@@ -106,4 +130,24 @@ h2 {
 
 .image-padding{
   margin-bottom: 30px;
+}
+
+.btn-signup {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #00B4CC;
+  transition: background 0.3s ease;
+  position: absolute;
+  left: 35%;
+  box-shadow: 1px 1px 1px #ddd;
+  color: white;
+  font-size: 15px;
+}
+
+.btn-signup:hover {
+  background: #009fb5;
+  text-decoration: none;
+  color: white;
 }

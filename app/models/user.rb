@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  mount_uploader :photo, PhotoUploader
 #   validates :first_name, presence: true, allow_blank: false
 #   validates :last_name, presence: true, allow_blank: false
 end
