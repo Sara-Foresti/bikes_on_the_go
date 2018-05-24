@@ -4,9 +4,9 @@
 
   <!-- bike belongs_to :user, the owner of the bike -->
   <div class="container ">
+    <% if @bike.user.photo? %>
     <div class="banner-user">
-      <% if @bike.user.photo? %>
-      <%= cl_image_tag @user.photo, class: "avatar" %>
+      <%= cl_image_tag @bike.user.photo, class: "avatar" %>
       <h3><%= @bike.user.first_name %></h3>
       <% end %>
     </div>
