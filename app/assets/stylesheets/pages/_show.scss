@@ -53,12 +53,20 @@ body {
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #ee8f5b;
+  background: #00B4CC;
   transition: background 0.3s ease;
   position: absolute;
   bottom:20px;
-  left:63px;
+  left:70px;
   box-shadow: 1px 1px 1px #ddd;
+  color: white;
+
+}
+
+.btn-request:hover {
+  background: #009fb5;
+  text-decoration: none;
+  color: white;
 
 }
 
@@ -115,22 +123,22 @@ h2 {
 
 .btn-signup {
   color: white;
-  padding: 10px 15px;
+  padding: 8px 20px;
   border-radius: 4px;
   font-weight: bold;
-  background: #ee8f5b;
+  background: #00B4CC;
   transition: background 0.3s ease;
   position: absolute;
-  left: 100px;
+  left: 35%;
   box-shadow: 1px 1px 1px #ddd;
-  text-align: center;
-  text-decoration: none;
+  color: white;
+  font-size: 15px;
+
 }
 
 .btn-signup:hover {
-  background: #f27c3c;
+  background: #009fb5;
   text-decoration: none;
   color: white;
-
 }
 

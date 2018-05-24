@@ -32,11 +32,11 @@
         <!-- <a href="#" class="btn_request">Request booking</a> -->
         <% if user_signed_in? %>
         <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
-          <%= f.submit "Request to book", class: "btn btn-request", id:"sweet-alert-demo" %>
+          <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
         <% end %>
 
         <% else %>
-          <%= link_to "Sign In",  new_user_session_path, class: "btn btn-signup" %>
+          <%= link_to "Sign In",  new_user_session_path, class: "btn-signup" %>
           <% end %>
       </div>
     </div>
