@@ -30,9 +30,14 @@
       <hr class="line">
       <div class="center">
         <!-- <a href="#" class="btn_request">Request booking</a> -->
+        <% if user_signed_in? %>
         <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
           <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
         <% end %>
+
+        <% else %>
+          <%= link_to "Sign In",  new_user_session_path, class: "btn btn-signup" %>
+          <% end %>
       </div>
     </div>
   </div>
@@ -41,36 +46,7 @@
 <div class="three-pictures">
   <% if @bike.photo? %>
        <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
-   <% if @bike.photo? %>
-       <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
-   <% if @bike.photo? %>
-       <%= cl_image_tag(@bike.photo, width: 400, height: 300, crop: :fill, class: "image-padding bike-image")%>
-       <% end %>
-<!--   <%= image_tag "bike3", class: "bike-image" %>
-  <%= image_tag "bike4", class: "bike-image2" %>
-  <%= image_tag "bike5", class: "bike-image" %> -->
+<% end %>
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

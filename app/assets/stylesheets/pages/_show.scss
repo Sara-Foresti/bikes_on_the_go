@@ -55,6 +55,7 @@
   bottom:20px;
   left:78px;
   box-shadow: 1px 1px 1px #ddd;
+
 }
 
 .center {
@@ -107,3 +108,18 @@ h2 {
 .image-padding{
   margin-bottom: 30px;
 }
+
+.btn-signup {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ee8f5b;
+  transition: background 0.3s ease;
+  position: absolute;
+  left: 100px;
+  box-shadow: 1px 1px 1px #ddd;
+  text-align: center;
+  text-decoration: none;
+}
+
