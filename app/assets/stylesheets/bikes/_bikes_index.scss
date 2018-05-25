@@ -23,6 +23,15 @@
   position: fixed;
 }
 
+.card-content {
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+}
 // .row {
 //   flex: 1 1 auto;
 // }

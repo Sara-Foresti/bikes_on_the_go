@@ -22,9 +22,8 @@
       </hr>
       <div class="text">
 
-        <% 3.times do %>
+
         <p><%= @bike.description %></p>
-        <% end %>
         <p>Category: <%= @bike.category %></p>
         <p>Size: <%= @bike.size %></p>
         <p>Location: <%= @bike.address %></p>
@@ -43,8 +42,8 @@
         <p>You have <%= @bike.bookings.count %> bookings for this bike</p>
       <% elsif user_signed_in? %>
         <%= simple_form_for [@bike, @booking], :method => :post do |f|%>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, input_html: {class: 'flatpickr'} %>
+          <%= f.input :end_date, as: :string, input_html: {class: 'flatpickr'} %>
           <%= f.submit "Request to book", class: "btn-request", id:"sweet-alert-demo" %>
         <% end %>
       <% else %>
