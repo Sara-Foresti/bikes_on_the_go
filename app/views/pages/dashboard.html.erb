@@ -16,9 +16,9 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li role="presentation" class="tab <%= "active" if params[:bikes] %>"><a href="#bikes" aria-controls="bikes" role="tab" data-toggle="tab">Your Bikes</a></li>
-        <li role="presentation" class="tab <%= "active" if params[:requests] %>"><a href="#requests" aria-controls="requests" role="tab" data-toggle="tab">Requests</a></li>
-        <li role="presentation" class="tab <%= "active" if params[:bookings] %>"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Your Bookings</a></li>
+        <li role="presentation" class="tab <%= "active" if params[:bikes] %>"><a href="#bikes" aria-controls="bikes" role="tab" data-toggle="tab">My Bikes</a></li>
+        <li role="presentation" class="tab <%= "active" if params[:requests] %>"><a href="#requests" aria-controls="requests" role="tab" data-toggle="tab">Bikes that I have requested</a></li>
+        <li role="presentation" class="tab <%= "active" if params[:bookings] %>"><a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Who wants my Bikes</a></li>
       </ul>
 
 
@@ -26,7 +26,9 @@
         <div role="tabpanel" class="tab-pane <%= "active" if params[:bikes] %>" id="bikes">
           <% current_user.bikes.each do |bike| %>
           <li class="bike">
-            <%= cl_image_tag bike.photo, class: 'tab-image' %>
+            <%= link_to bike_path(bike) do %>
+              <%= cl_image_tag bike.photo, class: 'tab-image' %>
+            <% end %>
             <div class="bike-details">
               <strong><%= bike.name %></strong>
               <p> <%= bike.description %></p>
@@ -39,12 +41,20 @@
           <% current_user.bikes.each do |bike| %>
             <% bike.bookings.each do |booking| %>
               <li class="bike">
-                <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
+                <%= link_to bike_path(bike) do %>
+                 <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
+                <% end %>
                 <div class="bike-details">
-                  <strong><%= booking.bike.name %></strong>
-                  <p>Request from <strong><%= booking.user.name %></strong></p>
-                  <p><strong><%= booking.start_date %></strong> - <strong><%= booking.end_date %></strong></p>
-
+                  <p>Bike name: <strong><%= booking.bike.name %></strong></p>
+                  <div class="requester">
+                    <p>Requested by <strong><%= booking.user.name %></strong></p>
+                    <%= cl_image_tag booking.user.photo, class: "avatar-small" %>
+                  </div>
+                  <div class="booking-dates">
+                    <p>From: <strong><%= booking.start_date %></strong> <i class="fas fa-arrow-right"></i> To: <strong><%= booking.end_date %></strong></p>
+                  </div>
+                </div>
+                <div class="manage-request text-center">
                   <% if booking.status == "accepted" %>
                     <p>You have <strong><%= booking.status %></strong>  this booking</p>
                     <%= link_to "Decline", decline_path(booking), class: "btn btn-danger" %>
@@ -65,10 +75,21 @@
         <div role="tabpanel" class="tab-pane <%= "active" if params[:requests] %>" id="requests">
           <% current_user.bookings.each do |booking| %>
           <li class="bike">
-            <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
+            <div class="bike-photo">
+              <%= link_to  bike_path(booking.bike) do %>
+               <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
+              <% end %>
+              <div class="owner-picture">
+                <%= cl_image_tag booking.bike.user.photo, class: "avatar-small" %>
+              </div>
+            </div>
             <div class="bike-details">
-              <p><%= booking.bike.name %></p>
+              <p>Bike name: <strong><%= booking.bike.name %></strong></p>
               <p>Bike Owner: <strong><%= booking.bike.user.name %></strong></p>
+              <p>Location: <strong><%= booking.bike.address %></strong></p>
+              <div class="booking-dates">
+                <p>From: <strong><%= booking.start_date %></strong> <i class="fas fa-arrow-right"></i> To: <strong><%= booking.end_date %></strong></p>
+              </div>
             </div>
             <div class="request-status">
               <p>This request is <strong><%= booking.status %></strong></p>
@@ -84,3 +105,9 @@
       </div>
     </div>
   </div>
+
+  <%# content_for(:after_js) do  %>
+    <!-- script>
+      console.log($("#bookings"));
+    </script> -->
+  <%# end %>

@@ -1,12 +1,10 @@
-
-
 .banner-show {
   height: 350px;
   margin-bottom: 50px;
   background-size: cover;
   background-position: center;
 }
-// }
+
 
 .avatar {
     width: 50px;
@@ -51,7 +49,6 @@
 // .heading {
 //   display: flex;
 //   justify-content: space-around;
-
 // }
 
 // .content-bottom {
@@ -61,20 +58,33 @@
 
 
 // .flex-container {
+//   display: flex;
 //   margin: 0;
 //   width: 50%;
 //   margin-top: -100px;
-
 // }
 
 // .left {
 //   flex: 1 1 auto;
 // }
+// .booking {
+//   flex: 0 0 300px;
+//   background: white;
+//   height: 532px;
+//   margin-top: -267px;
+//   margin-right: -18px;
+//   box-shadow: 1px 1px 1px #e6e6e6;
+//   opacity: 0.9;
+//   font-weight: bold;
+//   position: relative;
+// }
+
+// .booking-form{
+//   padding-left: 23px;
 
 
 
 // }
-
 // .sticky {
 //   position: fixed;
 //   left: 70%;
@@ -173,6 +183,7 @@
 //   transition: background 0.3s ease;
 //   position: absolute;
 //   left: 35%;
+
 //   bottom: 100px;
 //   box-shadow: 1px 1px 1px #ddd;
 //   color: white;
@@ -184,6 +195,7 @@
 //   text-decoration: none;
 //   color: white;
 // }
+
 // .show-container {
 //   padding-left: 50px;
 //   padding-right: 50px;
@@ -192,3 +204,4 @@
 // .left {
 //   margin-bottom: 40px;
 // }
+
