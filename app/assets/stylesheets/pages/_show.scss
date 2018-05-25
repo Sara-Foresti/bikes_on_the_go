@@ -7,9 +7,9 @@
 
 
 .avatar {
-    width: 50px;
+    width: 100px;
     border-radius: 60px;
-    height: 40px;
+    height: 80px;
 }
 
 .banner-wrapper {
@@ -19,22 +19,41 @@
 .flex-container{
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
+.left {
+  flex: 1 1 auto;
+  padding: 0 70px;
+  margin-bottom: 20px;
+}
 .booking-container {
   flex: 0 0 300px;
-  height: 450px;
+  // height: 450px;
   width: 200px;
-  margin-top: -150px;
+  // margin-top: -150px;
+  border-radius: 3px;
   margin-right: 70px;
   position: relative;
-  background-color: rgba(250, 250, 250, 0.7);
+  border: 1px solid #f2f2f2;
   padding: 20px;
+  position: sticky !important;
+  top: 20px;
+  padding-bottom: 20px;
 }
 
 .text-flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-margin: 20px;
+}
+
+.text {
+
+}
+
+hr {
+  color: #BFBFBF;
 }
 
 
@@ -103,27 +122,27 @@
 //  left: 20px;
 // }
 
-// .btn-request {
-//   color: white;
-//   padding: 10px 15px;
-//   border-radius: 4px;
-//   font-weight: bold;
-//   background: #00B4CC;
-//   transition: background 0.3s ease;
-//   position: absolute;
-//   bottom:20px;
-//   left:70px;
-//   box-shadow: 1px 1px 1px #ddd;
-//   color: white;
+.btn-request {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #00B4CC;
+  transition: background 0.3s ease;
+  // position: absolute;
+  bottom: 5px;
+  left:70px;
+  box-shadow: 1px 1px 1px #ddd;
+  color: white;
 
-// }
+}
 
-// .btn-request:hover {
-//   background: #009fb5;
-//   text-decoration: none;
-//   color: white;
+.btn-request:hover {
+  background: #009fb5;
+  text-decoration: none;
+  color: white;
 
-// }
+}
 
 // .center {
 //   margin-top: 100px;
@@ -176,27 +195,27 @@
 //   margin-bottom: 30px;
 // }
 
-// .btn-signup {
-//   color: white;
-//   padding: 8px 20px;
-//   border-radius: 4px;
-//   font-weight: bold;
-//   background: #00B4CC;
-//   transition: background 0.3s ease;
-//   position: absolute;
-//   left: 35%;
+.btn-signup {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #00B4CC;
+  transition: background 0.3s ease;
+  // position: absolute;
+  left: 35%;
 
-//   bottom: 100px;
-//   box-shadow: 1px 1px 1px #ddd;
-//   color: white;
-//   font-size: 15px;
-// }
+  bottom: 100px;
+  box-shadow: 1px 1px 1px #ddd;
+  color: white;
+  font-size: 15px;
+}
 
-// .btn-signup:hover {
-//   background: #009fb5;
-//   text-decoration: none;
-//   color: white;
-// }
+.btn-signup:hover {
+  background: #009fb5;
+  text-decoration: none;
+  color: white;
+}
 
 // .show-container {
 //   padding-left: 50px;
