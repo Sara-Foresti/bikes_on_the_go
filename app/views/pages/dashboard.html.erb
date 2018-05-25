@@ -3,9 +3,9 @@
     <div class="col-xs-12 col-md-3">
       <div class="user-profile text-center">
         <% if current_user.photo? %>
-          <%= photo = cl_image_path current_user.photo %>
+          <% photo = cl_image_path current_user.photo %>
         <% else %>
-          <%= photo = "sample" %>
+          <% photo = "https://orig00.deviantart.net/c91f/f/2010/014/b/c/avatar_by_eggar919.jpg" %>
         <% end %>
         <div class="avatar" style="background-image: url(<%= photo %>);"></div>
         <h3><%= current_user.first_name %></h3>
