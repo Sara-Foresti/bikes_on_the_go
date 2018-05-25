@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-xs-12 col-md-3">
       <div class="user-profile text-center">
-        <%= cl_image_tag current_user.photo, class: "avatar" %>
+        <% if current_user.photo? %>
+          <% photo = cl_image_path current_user.photo %>
+        <% else %>
+          <% photo = "https://orig00.deviantart.net/c91f/f/2010/014/b/c/avatar_by_eggar919.jpg" %>
+        <% end %>
+        <div class="avatar" style="background-image: url(<%= photo %>);"></div>
         <h3><%= current_user.first_name %></h3>
         <h3><%= current_user.last_name %></h3>
         <p><%= current_user.email %></p>
