@@ -8,8 +8,11 @@
 
 .avatar {
     width: 100px;
-    border-radius: 60px;
-    height: 80px;
+    border-radius: 50%;
+    height: 100px;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
 }
 
 .banner-wrapper {

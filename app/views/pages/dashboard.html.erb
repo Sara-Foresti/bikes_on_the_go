@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-3">
       <div class="user-profile text-center">
-        <%= cl_image_tag current_user.photo, class: "avatar" %>
+        <div class="avatar" style="background-image: url(<%= cl_image_path current_user.photo %>);"></div>
         <h3><%= current_user.first_name %></h3>
         <h3><%= current_user.last_name %></h3>
         <p><%= current_user.email %></p>
