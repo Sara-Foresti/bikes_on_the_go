@@ -10,6 +10,8 @@ require 'faker'
 Booking.destroy_all
 Bike.destroy_all
 
+User.destroy_all
+
 10.times do
   user = User.create!(email: Faker::Internet.free_email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   b = Bike.new(

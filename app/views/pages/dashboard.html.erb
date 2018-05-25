@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-3">
       <div class="user-profile text-center">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "avatar" %>
+        <%= cl_image_tag current_user.photo, class: "avatar" %>
         <h3><%= current_user.first_name %></h3>
         <h3><%= current_user.last_name %></h3>
         <p><%= current_user.email %></p>
@@ -36,41 +36,42 @@
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane <%= "active" if params[:bookings] %>" id="bookings">
-          <% current_user.bookings.each do |booking| %>
-            <li class="bike">
-              <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
-              <div class="bike-details">
-                <strong><%= booking.bike.name %></strong>
-                <p>Request from <strong><%= booking.user.name %></strong></p>
-                <p><strong><%= booking.start_date %></strong> - <strong><%= booking.end_date %></strong></p>
+          <% current_user.bikes.each do |bike| %>
+            <% bike.bookings.each do |booking| %>
+              <li class="bike">
+                <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
+                <div class="bike-details">
+                  <strong><%= booking.bike.name %></strong>
+                  <p>Request from <strong><%= booking.user.name %></strong></p>
+                  <p><strong><%= booking.start_date %></strong> - <strong><%= booking.end_date %></strong></p>
 
-                <% if booking.status == "accepted" %>
-                  <p>You have <strong><%= booking.status %></strong>  this booking</p>
-                  <%= link_to "Decline", decline_path(booking), class: "btn btn-danger" %>
-                <% elsif booking.status == "declined" %>
-                  <p>You have <strong><%= booking.status %></strong>  this booking</p>
-                  <%= link_to "Accept", accept_path(booking), class: "btn btn-success" %>
-                <% else %>
-                    <!-- pending -->
-                  <p>This request is <strong><%= booking.status %></strong> </p>
-                  <%= link_to "Accept", accept_path(booking), class: "btn btn-success" %>
-                  <%= link_to "Decline", decline_path(booking), class: "btn btn-danger" %>
-                <% end %>
-
-              </div>
-            </li>
+                  <% if booking.status == "accepted" %>
+                    <p>You have <strong><%= booking.status %></strong>  this booking</p>
+                    <%= link_to "Decline", decline_path(booking), class: "btn btn-danger" %>
+                  <% elsif booking.status == "declined" %>
+                    <p>You have <strong><%= booking.status %></strong>  this booking</p>
+                    <%= link_to "Accept", accept_path(booking), class: "btn btn-success" %>
+                  <% else %>
+                      <!-- pending -->
+                    <p>This request is <strong><%= booking.status %></strong> </p>
+                    <%= link_to "Accept", accept_path(booking), class: "btn btn-success" %>
+                    <%= link_to "Decline", decline_path(booking), class: "btn btn-danger" %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
           <% end %>
         </div>
         <div role="tabpanel" class="tab-pane <%= "active" if params[:requests] %>" id="requests">
-          <% current_user.booked_bikes.each do |booked_bike| %>
+          <% current_user.bookings.each do |booking| %>
           <li class="bike">
-            <%= cl_image_tag booked_bike.photo, class: 'tab-image' %>
+            <%= cl_image_tag booking.bike.photo, class: 'tab-image' %>
             <div class="bike-details">
-              <p><%= booked_bike.name %></p>
-              <p>Resquested from <strong><%= booked_bike.user %></strong></p>
+              <p><%= booking.bike.name %></p>
+              <p>Bike Owner: <strong><%= booking.bike.user.name %></strong></p>
             </div>
             <div class="request-status">
-              <p>This request is <strong><%= booked_bike.booking.status %></strong></p>
+              <p>This request is <strong><%= booking.status %></strong></p>
             </div>
           </li>
           <% end %>
