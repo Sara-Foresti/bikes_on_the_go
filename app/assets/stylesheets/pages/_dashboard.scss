@@ -19,6 +19,10 @@
 
 .dashboard {
   padding: 50px 40px;
+  p {
+    padding-top: 3px;
+    margin-bottom: 0px;
+  }
 }
 
 .tabs {
@@ -74,9 +78,10 @@
 
 }
 
-.tab-image{
-  width: 150px;
-  height: 100px;
+.tab-image {
+  width: 200px;
+  height: 150px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.07);
 }
 
 .bike {
@@ -90,8 +95,34 @@
 
 .bike-details {
   flex: 0 1 auto;
-  padding-left: 30px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 8px;
 }
 
+.manage-request {
+  flex: 0 0 200px;
+  p {
+    padding-bottom: 16px;
+  }
+}
 
+.requester {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-small {
+  border-radius: 50%;
+  width: 50px
+}
+
+.bike-photo {
+  position: relative;
+}
+
+.owner-picture {
+  position: absolute;
+  top: -12px;
+  right: -24px;
+}

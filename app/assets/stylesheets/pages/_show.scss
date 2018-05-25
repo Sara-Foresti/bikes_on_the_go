@@ -1,153 +1,153 @@
-body {
-  margin-bottom: 100px;
-}
+// body {
+//   margin-bottom: 100px;
+// }
 
-.banner-show {
-  height: 350px;
-  margin-bottom: 50px;
-  background-size: cover;
-  background-position: center;
-  .avatar {
-    width: 150px;
-    border-radius: 50%;
-  }
-  .banner-user {
-    background-color: white;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    position: relative;
-    top: 50px;
-  }
-}
+// .banner-show {
+//   height: 350px;
+//   margin-bottom: 50px;
+//   background-size: cover;
+//   background-position: center;
+//   .avatar {
+//     width: 150px;
+//     border-radius: 50%;
+//   }
+//   .banner-user {
+//     background-color: white;
+//     padding: 20px;
+//     width: 200px;
+//     text-align: center;
+//     position: relative;
+//     top: 50px;
+//   }
+// }
 
-.content-bottom {
-  display: flex;
-  align-items: flex-end;
-}
-
-
-.flex-container {
-  display: flex;
-
-}
-
-.left {
-  flex: 1 1 auto;
-}
-
-.booking {
-  flex: 0 0 300px;
-  background: white;
-  height: 532px;
-  margin-top: -267px;
-  margin-right: -18px;
-  box-shadow: 1px 1px 1px #e6e6e6;
-  opacity: 0.9;
-  font-weight: bold;
-  position: relative;
-}
-
-.booking-form{
-  padding-left: 23px;
-}
-
-.dates {
- display: flex;
- align-items: center;
- justify-content: flex-start;
- position: absolute;
-}
-
-.btn-request {
-  color: white;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #00B4CC;
-  transition: background 0.3s ease;
-  position: absolute;
-  bottom:20px;
-  left:70px;
-  box-shadow: 1px 1px 1px #ddd;
-  color: white;
-
-}
-
-.btn-request:hover {
-  background: #009fb5;
-  text-decoration: none;
-  color: white;
-
-}
-
-.center {
-  margin-top: 100px;
-}
-
-h1 {
-  font-size: 23px;
-  padding-left: 10px;
-}
-
-p {
-    font-size: 17px;
-    padding-top: 20px;
-    padding-left: 11px;
-}
-
-h2 {
-    font-size: 58px;
-    padding-left: 9px;
-    font-weight: bolder;
-}
-
-.line {
-  margin-top: 27px;
-  margin-bottom: 25px;
-  border-top: 1px solid #eeeeee;
-}
-
-.icon-space {
-  margin: 0% 4%;
-}
-
-.three-pictures {
-  display: flex;
-  justify-content: space-around;
-}
-
-.bike-image{
-  width: 30%;
-  height: 30%;
-}
+// .content-bottom {
+//   display: flex;
+//   align-items: flex-end;
+// }
 
 
-.bike-image2{
-  width: 31.5%;
-  height: 30%;
-}
+// .flex-container {
+//   display: flex;
 
-.image-padding{
-  margin-bottom: 30px;
-}
+// }
 
-.btn-signup {
-  color: white;
-  padding: 8px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #00B4CC;
-  transition: background 0.3s ease;
-  position: absolute;
-  left: 35%;
-  box-shadow: 1px 1px 1px #ddd;
-  color: white;
-  font-size: 15px;
-}
+// .left {
+//   flex: 1 1 auto;
+// }
 
-.btn-signup:hover {
-  background: #009fb5;
-  text-decoration: none;
-  color: white;
-}
+// .booking {
+//   flex: 0 0 300px;
+//   background: white;
+//   height: 532px;
+//   margin-top: -267px;
+//   margin-right: -18px;
+//   box-shadow: 1px 1px 1px #e6e6e6;
+//   opacity: 0.9;
+//   font-weight: bold;
+//   position: relative;
+// }
+
+// .booking-form{
+//   padding-left: 23px;
+// }
+
+// .dates {
+//  display: flex;
+//  align-items: center;
+//  justify-content: flex-start;
+//  position: absolute;
+// }
+
+// .btn-request {
+//   color: white;
+//   padding: 10px 15px;
+//   border-radius: 4px;
+//   font-weight: bold;
+//   background: #00B4CC;
+//   transition: background 0.3s ease;
+//   position: absolute;
+//   bottom:20px;
+//   left:70px;
+//   box-shadow: 1px 1px 1px #ddd;
+//   color: white;
+
+// }
+
+// .btn-request:hover {
+//   background: #009fb5;
+//   text-decoration: none;
+//   color: white;
+
+// }
+
+// .center {
+//   margin-top: 100px;
+// }
+
+// h1 {
+//   font-size: 23px;
+//   padding-left: 10px;
+// }
+
+// p {
+//     font-size: 17px;
+//     padding-top: 20px;
+//     padding-left: 11px;
+// }
+
+// h2 {
+//     font-size: 58px;
+//     padding-left: 9px;
+//     font-weight: bolder;
+// }
+
+// .line {
+//   margin-top: 27px;
+//   margin-bottom: 25px;
+//   border-top: 1px solid #eeeeee;
+// }
+
+// .icon-space {
+//   margin: 0% 4%;
+// }
+
+// .three-pictures {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+// .bike-image{
+//   width: 30%;
+//   height: 30%;
+// }
+
+
+// .bike-image2{
+//   width: 31.5%;
+//   height: 30%;
+// }
+
+// .image-padding{
+//   margin-bottom: 30px;
+// }
+
+// .btn-signup {
+//   color: white;
+//   padding: 8px 20px;
+//   border-radius: 4px;
+//   font-weight: bold;
+//   background: #00B4CC;
+//   transition: background 0.3s ease;
+//   position: absolute;
+//   left: 35%;
+//   box-shadow: 1px 1px 1px #ddd;
+//   color: white;
+//   font-size: 15px;
+// }
+
+// .btn-signup:hover {
+//   background: #009fb5;
+//   text-decoration: none;
+//   color: white;
+// }
