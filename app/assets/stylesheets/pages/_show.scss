@@ -38,18 +38,14 @@ body {
 
 .booking {
   flex: 0 0 300px;
-  background: white;
-  height: 532px;
-  margin-top: -267px;
-  margin-right: -18px;
+  height: 500px;
+  margin-top: -300px;
+  margin-right: 60px;
   box-shadow: 1px 1px 1px #e6e6e6;
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.8);
   font-weight: bold;
   position: relative;
-}
 
-.booking-form{
-  padding-left: 23px;
 }
 
 .dates {
@@ -57,6 +53,7 @@ body {
  align-items: center;
  justify-content: flex-start;
  position: absolute;
+ left: 20px;
 }
 
 .btn-request {
@@ -141,6 +138,7 @@ h2 {
   transition: background 0.3s ease;
   position: absolute;
   left: 35%;
+  bottom: 100px;
   box-shadow: 1px 1px 1px #ddd;
   color: white;
   font-size: 15px;
@@ -150,4 +148,12 @@ h2 {
   background: #009fb5;
   text-decoration: none;
   color: white;
+}
+.show-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.left {
+  margin-bottom: 40px;
 }

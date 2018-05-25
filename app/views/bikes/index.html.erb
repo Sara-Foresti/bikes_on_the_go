@@ -15,13 +15,14 @@
         </div>
       <% end %>
     </div>
-    <% if @bikes.any? %>
-      <div
-        id="map"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-      >
-      </div>
-    <% end %>
 
+    <% if @bikes.any? %>
+    <div
+      class="index-map"
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+    >
+    </div>
+   <% end %>
