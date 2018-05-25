@@ -2,27 +2,33 @@
 <div class="bike-header">
   <h1>Bikes</h1>
 </div>
-<div class="wrapper">
-  <div class="container">
+<div class="wrapper-index">
+  <div class="container-index">
     <div class="row">
       <% @bikes.each do |bike| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class= "card" style= "background-image:linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(69,68,68,0.8) 100%), url('<%= cl_image_path bike.photo %>')">
-            <div class= "card_content">
-              <%= link_to bike.name, bike_path(bike) %>
-            </div>
+      <div class="col-xs-12 col-sm-4">
+        <% if bike.photo? %>
+          <% photo = cl_image_path bike.photo %>
+        <% else %>
+          <% photo = "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" %>
+        <% end %>
+        <div class= "card" style= "background-image:linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(69,68,68,0.8) 100%), url('<%= photo %>')">
+          <div class= "card_content">
+            <%= link_to bike.name, bike_path(bike) %>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
 
     <% if @bikes.any? %>
     <div
-      class="index-map"
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
+    class="index-map"
+    id="map"
+    style="width: 100%;
+    height: 700px;"
+    data-markers="<%= @markers.to_json %>"
     >
-    </div>
-   <% end %>
+  </div>
+  <% end %>
+</div>
