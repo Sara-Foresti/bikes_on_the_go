@@ -4,7 +4,7 @@
   <div class="banner-show content-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bike_photo, quality: "auto" %>');">
   </div>
 
-
+<div class="">
   <div class="flex-container">
     <div class="text-flex">
       <div class="header">
@@ -14,6 +14,7 @@
       <div class="name">
         <h3><%= @bike.user.first_name %></h3>
       <% end %>
+    </div>
     </div>
         <h1><%= @bike.name %></h1>
         <p><%= @bike.description %></p>
